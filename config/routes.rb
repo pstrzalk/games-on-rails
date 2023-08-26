@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :tic_tac_toes do
+    # member :start
+    collection do
+      post :start
+    end
+    put :place_mark
+    # get :show
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'games#index'
 end

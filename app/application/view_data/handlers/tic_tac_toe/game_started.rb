@@ -3,8 +3,8 @@ module ViewData
     module TicTacToe
       class GameStarted
         def self.call(game_started)
-          ReadModels::TicTacToe::Game.save_record(
-            game_started.game_id,
+          ReadModels::TicTacToe::Game.create(
+            id: game_started.game_id,
             turn_for: game_started.turn_for,
             started_at: game_started.time
           )

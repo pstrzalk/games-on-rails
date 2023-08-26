@@ -1,0 +1,9 @@
+<% if active && !cell_value %>
+  <%= link_to tic_tac_to_place_mark_path(game_id, row: row, col: col), data: { turbo_method: :put }, class: "cell value_#{cell_value}" do %>
+
+  <% end %>
+<% else %>
+  <span class="cell value_<%= cell_value %>">
+
+  </span>
+<% end %>

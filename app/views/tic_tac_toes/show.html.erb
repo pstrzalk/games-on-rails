@@ -1,0 +1,8 @@
+<div data-controller="tic-tac-toe" class="tic_tac_toe">
+  <%= turbo_stream_from "tic_tac_toe_game_#{@game.id}" %>
+
+  <%= render @game %>
+
+  <br />
+  <%= link_to 'Back to homepage', root_path %>
+</div>

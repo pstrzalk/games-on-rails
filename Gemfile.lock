@@ -79,6 +79,7 @@ GEM
       reline (>= 0.3.1)
     docile (1.4.0)
     erubi (1.12.0)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -159,6 +160,16 @@ GEM
     redis (4.8.1)
     reline (0.3.7)
       io-console (~> 0.5)
+    requestjs-rails (0.0.10)
+      rails (>= 6.0.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -175,6 +186,7 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     thor (1.2.2)
+    tilt (2.0.11)
     timeout (0.4.0)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -205,6 +217,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.6)
   redis (~> 4.0)
+  requestjs-rails
+  sassc-rails
   simplecov
   sprockets-rails
   stimulus-rails

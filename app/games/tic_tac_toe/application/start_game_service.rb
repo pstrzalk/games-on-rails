@@ -6,6 +6,8 @@ module TicTacToe
 
         repository = Domain::GameRepository.get
         repository.save(game)
+
+        game.id
       end
     end
   end

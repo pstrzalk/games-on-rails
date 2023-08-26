@@ -3,8 +3,8 @@ module ViewData
     module TicTacToe
       class GameFinished
         def self.call(game_finished)
-          ReadModels::TicTacToe::Game.save_record(
-            game_finished.game_id,
+          read_model = ReadModels::TicTacToe::Game.find(game_finished.game_id)
+          read_model.update(
             winner: game_finished.winner,
             finished_at: game_finished.time
           )

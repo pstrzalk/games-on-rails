@@ -1,0 +1,33 @@
+.tic_tac_toe {
+  width: 400px;
+  margin: 0 auto;
+
+  .game {
+    .row {
+      width: 300px;
+    }
+
+    .cell {
+      width: 95px;
+      height: 95px;
+      margin: 0;
+      display: table-cell;
+      border: 1px solid #000;
+
+      &.value_x {
+        background-color: #000;
+      }
+
+      &.value_o {
+        background-color: #D54;
+      }
+
+      &.cell--small {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: bottom;
+      }
+    }
+  }
+}

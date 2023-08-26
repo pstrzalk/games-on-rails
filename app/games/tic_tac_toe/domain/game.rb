@@ -1,6 +1,9 @@
 module TicTacToe
   module Domain
     class Game
+      SpotAlreadyPlayed = Class.new(StandardError)
+      GameHasAWinner = Class.new(StandardError)
+
       include WithDomainEvents::Entity
 
       attr_reader :id
@@ -39,6 +42,7 @@ module TicTacToe
         mark_placed.row = row
         mark_placed.col = col
         mark_placed.mark = board[row][col]
+        mark_placed.turn_for = turn_for
         mark_placed.time = current_time
         dispatch_event(mark_placed)
 

@@ -1,0 +1,36 @@
+<% cell_active = !game.finished_at? %>
+
+<div class="game" data-game-id="<%= game.id %>" id="<%= "view_data_read_models_tic_tac_toe_game_#{game.id}" %>">
+  <h1>Tic Tac Toe</h1>
+
+  <div class="info">
+    <% if game.finished_at? %>
+      <h2>Game finished!</h2>
+      <% if game.winner %>
+        Won by <span class="cell cell--small value_<%= game.winner %>"></span><br />
+        <br />
+      <% else %>
+        Ended in a draw<br />
+      <% end %>
+    <% else %>
+      Now it's the turn for: <span class="cell cell--small value_<%= game.turn_for %>"></span>
+      <br />
+    <% end %>
+    <br />
+  </div>
+  <div class="row">
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board00, row: 0, col: 0, active: cell_active } %>
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board01, row: 0, col: 1, active: cell_active } %>
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board02, row: 0, col: 2, active: cell_active } %>
+  </div>
+  <div class="row">
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board10, row: 1, col: 0, active: cell_active } %>
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board11, row: 1, col: 1, active: cell_active } %>
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board12, row: 1, col: 2, active: cell_active } %>
+  </div>
+  <div class="row">
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board20, row: 2, col: 0, active: cell_active } %>
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board21, row: 2, col: 1, active: cell_active } %>
+    <%= render partial: 'view_data/read_models/tic_tac_toe/games/cell', locals: { game_id: game.id, cell_value: game.board22, row: 2, col: 2, active: cell_active } %>
+  </div>
+</div>
