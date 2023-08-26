@@ -1,24 +1,24 @@
-# README
+# Games on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Did you know that you can make games with Ruby on Rails?
 
-Things you may want to cover:
+## Shape of this application
 
-* Ruby version
+### Domain-Driven Design
 
-* System dependencies
+The application uses Domain-Driven Design approach, by encapsulating separate bounded contexts in modules. Each game is implemented as a separate module in `app/games` folder.
 
-* Configuration
+Each game has its own persistence definition as well as (some sort of) application and domain layers.
 
-* Database creation
+### Read Models
 
-* Database initialization
+For presentation purposes, domain concepts are projected into read models, defined in `app/application/view_data/read_models`. It is done by processing domain events emitted within bounded contexts.
 
-* How to run the test suite
+### Hotwire
 
-* Services (job queues, cache servers, search engines, etc.)
+Frontend uses as little explicit JavaScript as possible. For that purpose, Hotwire is leveraged.
 
-* Deployment instructions
+## Games
 
-* ...
+The games implemented so far:
+- Tic Tac Toe
